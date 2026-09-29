@@ -1,0 +1,38 @@
+# Runtime dependencies, exact pins (CLAUDE.md A5). Installed on the air-gapped host with:
+#   pip install --no-index --find-links wheelhouse -r requirements.txt
+# M0 core plus the demo build's API/imaging stack (also what Vercel installs for api/index.py).
+# ML/CV packages are added, pinned to verified versions, in the milestone that first uses them.
+annotated-types==0.8.0
+cffi==2.1.1
+colorama==0.4.6
+cryptography==50.0.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+markdown-it-py==4.2.0
+mdurl==0.1.2
+pycparser==3.0
+pydantic==2.13.5
+pydantic_core==2.46.5
+Pygments==2.21.0
+PyYAML==6.0.3
+referencing==0.37.0
+rfc8785==0.1.4
+rich==15.0.0
+rpds-py==2026.6.3
+shellingham==1.5.4
+typer==0.27.2
+typing-inspection==0.4.4
+typing_extensions==4.16.0
+attrs==26.1.0
+annotated-doc==0.0.5
+
+# API + demo imagery
+anyio==4.15.1
+click==8.5.0
+fastapi==0.141.1
+h11==0.16.0
+idna==3.20
+numpy==2.5.3
+pillow==12.3.0
+starlette==1.7.0
+uvicorn==0.54.0

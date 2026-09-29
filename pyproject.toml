@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-cv"
+version = "0.1.0"
+description = "AURA-CV: Air-Gapped Unified Risk & Assurance for Computer Vision"
+readme = "README.md"
+requires-python = ">=3.10"
+# Exact pins live in requirements.txt (installed offline from wheelhouse/).
+dependencies = [
+  "pydantic>=2.6,<3",
+  "cryptography>=42",
+  "jsonschema>=4.21",
+  "rfc8785>=0.1.4",
+  "typer>=0.12",
+  "PyYAML>=6",
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "numpy>=2",
+  "pillow>=10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-socket>=0.7"]
+
+[project.scripts]
+aura = "aura.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["aura*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# R-CON-1 / A3 rule 1: the whole suite runs with non-loopback sockets blocked.
+addopts = "-ra --allow-hosts=127.0.0.1,::1"
