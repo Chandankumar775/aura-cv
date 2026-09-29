@@ -22,7 +22,20 @@ MIN_PYTHON = (3, 10)
 
 # Hosted demo (e.g. Vercel serverless). The real product is air-gapped; a hosted build is
 # a public demonstration and says so in the UI. Storage is ephemeral (/tmp) there.
-HOSTED = bool(os.environ.get("VERCEL") or os.environ.get("AURA_HOSTED"))
+_HOST_SIGNALS = ("AURA_HOSTED", "VERCEL", "VERCEL_ENV", "VERCEL_URL", "NOW_REGION", "AWS_LAMBDA_FUNCTION_NAME", "LAMBDA_TASK_ROOT")
+
+
+def _repo_writable() -> bool:
+    try:
+        probe = REPO_ROOT / ".aura-write-probe"
+        probe.write_text("")
+        probe.unlink()
+        return True
+    except OSError:
+        return False
+
+
+HOSTED = any(os.environ.get(k) for k in _HOST_SIGNALS) or not _repo_writable()
 
 
 @dataclass(frozen=True)

@@ -7,8 +7,8 @@
     "api/index.py": {
       "maxDuration": 60,
       "memory": 1024,
-      "includeFiles": "{aura/**,schemas/**}",
-      "excludeFiles": "{ui/**,.venv/**,.history/**,.agents/**,.claude/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**,*.md}"
+      "includeFiles": "{aura/**,schemas/**,ui/dist/**}",
+      "excludeFiles": "{ui/node_modules/**,ui/src/**,ui/public/**,.venv/**,.history/**,.agents/**,.claude/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**,*.md}"
     }
   },
   "rewrites": [
