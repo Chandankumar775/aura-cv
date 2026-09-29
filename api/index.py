@@ -1,11 +1,9 @@
-"""Vercel serverless entry point: exposes the AURA-CV FastAPI app as `app` (ASGI).
+"""Vercel entry point (FastAPI preset): the top-level `app` below is the ASGI app.
 
-Vercel serves the built UI (ui/dist) from its CDN and routes /api/* here. The hosted
-build is a public demonstration: storage lives in /tmp and resets when an instance
-recycles, and the UI labels it "Hosted demo, not air-gapped".
-
-If start-up fails, the function still answers - with the error - so the cause shows in
-the browser and in the function logs rather than as a bare FUNCTION_INVOCATION_FAILED.
+FastAPI serves everything: /api/* and the built UI in ui/dist (committed so it is always
+in the function bundle). The hosted build is a public demonstration: storage lives in
+/tmp and resets when an instance recycles, and the UI labels it "Hosted demo, not air-gapped".
+If start-up fails, the function answers with the error instead of a bare 500.
 """
 
 import json
@@ -15,18 +13,25 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-try:
-    from aura.api.app import create_app
 
-    app = create_app()
-except Exception:  # pragma: no cover - only reached on a broken deployment
-    _trace = traceback.format_exc()
-    print(_trace, file=sys.stderr, flush=True)
+def _build():
+    try:
+        from aura.api.app import create_app
 
-    async def app(scope, receive, send):  # minimal ASGI app reporting the failure
-        if scope["type"] != "http":
-            return
-        body = json.dumps({"error": {"code": "STARTUP_FAILED", "message": "AURA-CV could not start on this host.",
-                                     "details": {"traceback": _trace.splitlines()[-12:]}}}).encode()
-        await send({"type": "http.response.start", "status": 500, "headers": [(b"content-type", b"application/json")]})
-        await send({"type": "http.response.body", "body": body})
+        return create_app()
+    except Exception:  # only reached on a broken deployment
+        trace = traceback.format_exc()
+        print(trace, file=sys.stderr, flush=True)
+
+        async def failed(scope, receive, send):
+            if scope["type"] != "http":
+                return
+            body = json.dumps({"error": {"code": "STARTUP_FAILED", "message": "AURA-CV could not start on this host.",
+                                         "details": {"traceback": trace.splitlines()[-12:]}}}).encode()
+            await send({"type": "http.response.start", "status": 500, "headers": [(b"content-type", b"application/json")]})
+            await send({"type": "http.response.body", "body": body})
+
+        return failed
+
+
+app = _build()

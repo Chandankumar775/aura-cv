@@ -35,3 +35,6 @@ include = ["aura*"]
 testpaths = ["tests"]
 # R-CON-1 / A3 rule 1: the whole suite runs with non-loopback sockets blocked.
 addopts = "-ra --allow-hosts=127.0.0.1,::1"
+
+[tool.vercel]
+entrypoint = "api.index:app"
