@@ -1,20 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm --prefix ui ci",
-  "buildCommand": "npm --prefix ui run build",
-  "outputDirectory": "ui/dist",
   "functions": {
     "api/index.py": {
       "maxDuration": 60,
-      "memory": 1024,
-      "includeFiles": "{aura/**,schemas/**,ui/dist/**}",
-      "excludeFiles": "{ui/node_modules/**,ui/src/**,ui/public/**,.venv/**,.history/**,.agents/**,.claude/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**,*.md}"
+      "excludeFiles": "{ui/node_modules/**,ui/src/**,.venv/**,.history/**,.agents/**,.claude/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**}"
     }
   },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ],
   "headers": [
     {
       "source": "/(.*)",

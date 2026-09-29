@@ -12,7 +12,6 @@ build/
 dist/
 # frontend
 ui/node_modules/
-ui/dist/
 # editor autosaves
 .history/
 
@@ -21,3 +20,4 @@ ui/dist/
 .claude/
 skills-lock.json
 .pytest_cache/
+!ui/dist/
