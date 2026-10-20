@@ -47,7 +47,7 @@
       }
     },
     {
-      "description": "An UNAVAILABLE check never lets the affected asset be ACCEPT on that aspect (CLAUDE.md A7.5).",
+      "description": "An UNAVAILABLE check never lets the affected asset be ACCEPT on that aspect (docs/spec/master-spec.md A7.5).",
       "if": { "properties": { "status": { "const": "UNAVAILABLE" } } },
       "then": { "properties": { "recommended_disposition": { "enum": ["REVIEW", "QUARANTINE"] } } }
     }

@@ -1,7 +1,7 @@
 """AURA-CV: Air-Gapped Unified Risk & Assurance for Computer Vision.
 
 An offline, model-agnostic assurance framework for contributed datasets, models,
-inference records and operational input batches (see CLAUDE.md).
+inference records and operational input batches (see docs/spec/master-spec.md).
 """
 
 __version__ = "0.1.0"

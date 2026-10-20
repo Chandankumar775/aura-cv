@@ -17,7 +17,6 @@ ui/node_modules/
 
 # local agent tooling (installed skills), not part of the product
 .agents/
-.claude/
 skills-lock.json
 .pytest_cache/
 !ui/dist/

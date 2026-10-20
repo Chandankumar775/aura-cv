@@ -71,7 +71,7 @@ def test_detectors_do_not_touch_ground_truth_manifests():
 
 def test_never_claims_tamper_proof():
     banned = re.compile(r"tamper[- ]?proof|impossible to tamper", re.IGNORECASE)
-    # CLAUDE.md and the prompt file quote the banned phrase in order to ban it.
+    # docs/spec/ quotes the banned phrase in order to ban it.
     candidates = [*PY_SOURCES, *(ROOT / "schemas").glob("*.json"), *(ROOT / "docs").glob("*.md"), ROOT / "README.md"]
     offenders = []
     for path in candidates:

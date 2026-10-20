@@ -3,7 +3,7 @@
   "functions": {
     "api/index.py": {
       "maxDuration": 60,
-      "excludeFiles": "{ui/node_modules/**,ui/src/**,.venv/**,.history/**,.agents/**,.claude/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**}"
+      "excludeFiles": "{ui/node_modules/**,ui/src/**,.venv/**,.history/**,.agents/**,docs/**,tests/**,data/**,keys/**,wheelhouse/**}"
     }
   },
   "headers": [

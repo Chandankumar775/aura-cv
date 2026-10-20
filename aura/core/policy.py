@@ -1,4 +1,4 @@
-"""Disposition policy (CLAUDE.md A7.5, design.md §10.3) and verdict aggregation.
+"""Disposition policy (docs/spec/master-spec.md A7.5, design.md §10.3) and verdict aggregation.
 
 Severity x confidence -> recommended disposition, with hard overrides that always
 QUARANTINE. The matrix is data, not code, so an ADMIN can change it; every change

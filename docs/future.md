@@ -1,6 +1,6 @@
 # Future Work
 
-Out of scope for the hackathon build (CLAUDE.md A18), or noticed during the build and
+Out of scope for the hackathon build (docs/spec/master-spec.md A18), or noticed during the build and
 parked rather than added without approval (A4).
 
 ## From A18

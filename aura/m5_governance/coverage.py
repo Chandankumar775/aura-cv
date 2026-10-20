@@ -1,4 +1,4 @@
-"""Coverage statement: single source of truth (CLAUDE.md A16; R-GOV-3, R-DEL-5).
+"""Coverage statement: single source of truth (docs/spec/master-spec.md A16; R-GOV-3, R-DEL-5).
 
 Embedded in every report and served to the UI at ``/api/v1/coverage``.
 """

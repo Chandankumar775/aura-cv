@@ -1,7 +1,6 @@
 .venv
 .history
 .agents
-.claude
 data
 keys
 wheelhouse

@@ -3,7 +3,7 @@
 > **DRAFT, placeholder location.** From Milestone M7 the single source of truth is
 > `aura/m5_governance/coverage.py`, and this file is generated from it and embedded in
 > every report (R-GOV-3, R-DEL-5). Until then, the content below is copied from
-> CLAUDE.md A16. It states **intended** coverage; nothing below has been measured yet.
+> docs/spec/master-spec.md A16. It states **intended** coverage; nothing below has been measured yet.
 
 ## Supported
 Visible patch and blended triggers in a subset of samples; random label flipping;

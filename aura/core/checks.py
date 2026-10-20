@@ -1,4 +1,4 @@
-"""Check plugin protocol, registry and scheduler (CLAUDE.md A7.4; R-GEN-1, R-CON-5).
+"""Check plugin protocol, registry and scheduler (docs/spec/master-spec.md A7.4; R-GEN-1, R-CON-5).
 
 Every detector in every module is a ``Check``. The scheduler decides, per module and
 per check, whether the check can run with the inputs and model access available, runs

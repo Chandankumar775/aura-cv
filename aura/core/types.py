@@ -1,4 +1,4 @@
-"""Core domain model (CLAUDE.md A7). Modules communicate only through these types.
+"""Core domain model (docs/spec/master-spec.md A7). Modules communicate only through these types.
 
 The ``Finding`` is the central object: every module emits findings, and every finding
 carries the five fields the problem statement demands of a flag (R-GOV-1): reason,
