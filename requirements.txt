@@ -1,4 +1,4 @@
-# Runtime dependencies, exact pins (CLAUDE.md A5). Installed on the air-gapped host with:
+# Runtime dependencies, exact pins (docs/spec/master-spec.md A5). Installed on the air-gapped host with:
 #   pip install --no-index --find-links wheelhouse -r requirements.txt
 # M0 core plus the demo build's API/imaging stack (also what Vercel installs for api/index.py).
 # ML/CV packages are added, pinned to verified versions, in the milestone that first uses them.
