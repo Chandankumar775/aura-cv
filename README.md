@@ -1,6 +1,6 @@
 <div align="center">
 
-# AURA-CV
+<img src="docs/brand/wordmark.webp" alt="AURA-CV" width="100%">
 
 **Air-Gapped Unified Risk & Assurance for Computer Vision**
 
