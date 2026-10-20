@@ -1,4 +1,4 @@
-"""FastAPI application (docs/spec/master-spec.md A11), demo build. Binds to 127.0.0.1 only.
+"""FastAPI application (spec A11), demo build. Binds to 127.0.0.1 only.
 
 Serves the JSON API under /api/v1 and the built UI (ui/dist) at "/".
 """

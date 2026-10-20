@@ -1,4 +1,4 @@
-"""Local Ed25519 key management (docs/spec/master-spec.md A8.3, design.md §8.6).
+"""Local Ed25519 key management (spec A8.3, design.md §8.6).
 
 * One active key per purpose (inference, audit, report), so compromise of one
   purpose does not let an attacker forge the others.

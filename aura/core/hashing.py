@@ -1,6 +1,6 @@
 """SHA-256 helpers and the ``sha256:<64 lowercase hex>`` digest format.
 
-Every digest AURA-CV stores or prints uses this one format (docs/spec/master-spec.md A11.1), so
+Every digest AURA-CV stores or prints uses this one format (spec A11.1), so
 digests from datasets, models, records, audit entries and reports can be compared
 as plain strings. Supports R-INF-1 (binding), R-GOV-2 (audit chain) and R-DEL-4.
 """

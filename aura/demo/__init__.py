@@ -2,7 +2,7 @@
 AURA-CV workflow runnable end to end before the real detectors (M1-M6) exist.
 
 Every value produced by this package is ILLUSTRATIVE, not measured. The API marks all
-responses with ``demo: true`` and the UI shows a permanent DEMO DATA marker (docs/spec/master-spec.md
+responses with ``demo: true`` and the UI shows a permanent DEMO DATA marker (the requirements spec
 A3 rule 2: placeholder content must be visibly labelled as placeholder).
 
 What is *real* even in demo mode: the check scheduler and its UNAVAILABLE fallbacks,

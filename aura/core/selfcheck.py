@@ -1,4 +1,4 @@
-"""Start-up self-check (docs/spec/master-spec.md A11.2 ``/system/selfcheck``, A14.2 criterion 1).
+"""Start-up self-check (spec A11.2 ``/system/selfcheck``, A14.2 criterion 1).
 
 Each item returns PASS / WARN / FAIL with a plain explanation. Items are added as the
 milestones that own them land (bundled weights and battery in M2/M5, DB in M2, PDF

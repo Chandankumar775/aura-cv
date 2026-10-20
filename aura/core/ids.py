@@ -1,4 +1,4 @@
-"""Prefixed identifiers and UTC timestamps (docs/spec/master-spec.md A11.1).
+"""Prefixed identifiers and UTC timestamps (spec A11.1).
 
 Two kinds of id exist:
   * ``new_id`` - random, for things that are created once (users, assessments, jobs);

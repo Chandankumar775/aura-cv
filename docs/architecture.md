@@ -1,7 +1,7 @@
 # AURA-CV Architecture
 
 > Living document, updated each milestone. Design rationale: `docs/design.md` (§5).
-> Binding spec: `docs/spec/master-spec.md`. Decisions: `docs/decisions.md`.
+> Binding spec: the requirements spec. Decisions: `docs/decisions.md`.
 
 ## 1. Layers
 

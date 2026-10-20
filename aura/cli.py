@@ -1,4 +1,4 @@
-"""``aura`` command-line interface (docs/spec/master-spec.md A11.3). Mirrors the API for scripted runs.
+"""``aura`` command-line interface (spec A11.3). Mirrors the API for scripted runs.
 
 Milestone M0 provides ``selfcheck``, ``keys`` and ``audit verify``; the remaining
 commands arrive with the milestones that implement them.

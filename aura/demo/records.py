@@ -1,5 +1,5 @@
 """Demo inference-record stream: genuinely signed records, deliberately tampered copies,
-and a real verifier (R-INF-1, R-INF-2; docs/spec/master-spec.md A8.3; scenarios I1-I6).
+and a real verifier (R-INF-1, R-INF-2; spec A8.3; scenarios I1-I6).
 
 The records are real Ed25519-signed RFC 8785 objects produced with the local inference
 key; only the model outputs inside them are illustrative. Tampering is applied to the

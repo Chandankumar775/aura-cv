@@ -1,35 +1,33 @@
 # Design Decisions Log
 
-Decisions taken where `docs/spec/master-spec.md` (binding) and `docs/design.md` disagree, or where
-both are silent. Rule applied throughout: *if they disagree, docs/spec/master-spec.md wins; if both
+Decisions taken where the requirements spec (binding) and `docs/design.md` disagree, or where
+both are silent. Rule applied throughout: *if they disagree, the requirements spec wins; if both
 are silent, take the simplest compliant option and record it here* (A1, A4).
 
 Each entry: **context → decision → consequence**. Status is `Adopted` unless noted.
 
 ---
 
-## Spec conflicts (docs/spec/master-spec.md vs design.md)
+## Spec conflicts (the requirements spec vs design.md)
 
-**D-001 Repository root.** The prompt suggests a fresh `aura-cv/` folder; the working
-folder `auracv/` already holds the spec sources. → The repository root **is** `auracv/`.
-`masterprompt.md` and `supermd.md` stay at the root as source material; `supermd.md`
-is copied verbatim to `docs/design.md`; Part A of the prompt is `docs/spec/master-spec.md`.
+**D-001 Repository root.** The project lives at the repository root; the full solution
+design is `docs/design.md`.
 
-**D-002 Finding id format.** design.md §13.3 uses `F-M1-0007`; docs/spec/master-spec.md A11.1 uses
+**D-002 Finding id format.** design.md §13.3 uses `F-M1-0007`; the requirements spec A11.1 uses
 prefixed ids. → `fnd_<16 hex>`. The schema rejects the old form.
 
 **D-003 Evidence artefacts.** design.md §13.3 inlines `artefacts: [{kind, path, digest}]`;
-docs/spec/master-spec.md A7.3 uses `artefact_ids`. → `artefact_ids` in findings; path and digest live on
+the requirements spec A7.3 uses `artefact_ids`. → `artefact_ids` in findings; path and digest live on
 the `Artefact` entity. The report builder (M7) may inline artefact metadata for
 readability, but the finding contract stays id-based.
 
 **D-004 Audit event vocabulary.** design.md §14.3 lists `INGEST` and `ANALYST_VIEWED`;
-docs/spec/master-spec.md A8.5 lists `ASSET_REGISTERED` and no view event. → The A8.5 list exactly
+the requirements spec A8.5 lists `ASSET_REGISTERED` and no view event. → The A8.5 list exactly
 (`AuditEvent` enum); unknown events are rejected at append. Consequence: read-only views
 are **not** audited in the MVP (design.md §10.4 said they would be). Recorded in
 `future.md`.
 
-**D-005 Asset types.** design.md §10.2 lists 8 asset types; docs/spec/master-spec.md A7.1 lists 12. → A7.1.
+**D-005 Asset types.** design.md §10.2 lists 8 asset types; the requirements spec A7.1 lists 12. → A7.1.
 
 ## Cryptography and formats
 
